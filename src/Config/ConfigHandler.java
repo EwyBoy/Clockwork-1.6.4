@@ -3,9 +3,7 @@ package Config;
 import Block.Technical.BlockInfo;
 import Item.Technical.ItemInfo;
 import net.minecraftforge.common.Configuration;
-
 import java.io.File;
-
 
 public class ConfigHandler 
 {
@@ -14,7 +12,7 @@ public class ConfigHandler
 			Configuration Config = new Configuration (file);
 			Config.load();
 			
-			//BlockInfo.ClockworkID = Config.getBlock(BlockInfo.ClockworkKey, BlockInfo.ClockworkDefault).getInt();
+			BlockInfo.FanID = Config.getBlock(BlockInfo.FanKey, BlockInfo.FanDefault).getInt();
 			BlockInfo.TransID = Config.getBlock(BlockInfo.TransKey, BlockInfo.TransDefault).getInt();
 
 			//ItemInfo.CraftingComponentID = Config.getItem(ItemInfo.CraftingComponentKey,  ItemInfo.CraftingComponentDefault).getInt()-256;
