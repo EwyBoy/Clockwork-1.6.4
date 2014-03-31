@@ -1,7 +1,7 @@
 package Block.Technical;
 
-import Block.Fan;
-import Block.TransBlock;
+import Block.Blocks.Fan;
+import Block.Blocks.TransBlock;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;

@@ -1,4 +1,4 @@
-package Block;
+package Block.Blocks;
 
 import Block.Technical.BlockInfo;
 import Tech.CWCreativeTabs;
