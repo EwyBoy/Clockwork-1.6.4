@@ -1,11 +1,10 @@
 package Item.Items;
 
 import Item.Technical.ItemInfo;
-import Tech.CWCreativeTabs;
+import CreativeTabs.CWCreativeTabs;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -21,7 +20,7 @@ public class Clock extends Item
     public Clock(int id) 
 	{
 		super(id);
-		setCreativeTab(CWCreativeTabs.ClockworkTab);
+		setCreativeTab(CWCreativeTabs.ClockworkItemTab);
 		setMaxStackSize(1);
 		setMaxDamage(5);
 		setUnlocalizedName(ItemInfo.ClockUnlocalized);
@@ -39,8 +38,7 @@ public class Clock extends Item
 	    {
 	        return par1ItemStack;
 	    }
-	 
-	
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public boolean  itemInteractionForEntity(ItemStack itemstack, EntityPlayer player, EntityLivingBase target)
@@ -55,16 +53,43 @@ public class Clock extends Item
 		return false;
 	}
 
-
-
     @Override
 	@SideOnly(Side.CLIENT)
 	public boolean onItemUseFirst(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float hitX, float hitY, float hit) 
 	{
+             int l = world.getBlockMetadata(x,y,z);
+             double d0 = (double)((float)x + 0.5F);
+             double d1 = (double)((float)y + 0.7F);
+              double d2 = (double)((float)z + 0.5F);
+              double d3 = 0.2199999988079071D;
+               double d4 = 0.27000001072883606D;
 
-        counter--;
-        if(counter == 0){
-            counter=20;
+            world.spawnParticle("mobSpellAmbient",  d0, d1 - d3, d2 + d4, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("magicCrit",        d0, d1 - d3, d2 + d4, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("crit",             d0, d1 + d3, d4 - d2, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("depthsuspend",     d0, d1 + d3, d4 - d2, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("mobSpell",         d0, d1 - d3, d4 + d2, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("instantSpell",     d0, d1 - d3, d4 + d2, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("happyVillager",    d0, d1 + d3, d2 - d4, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("snowballpoof",     d0, d1 + d3, d2 - d4, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("reddust",          d0, d3 - d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("cloud",            d0, d3 - d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("witchMagic",       d0, d3 + d1, d2 - d4, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("spell",            d0, d3 + d1, d2 - d4, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("mobSpellAmbient",  d0, d1 - d3, d2 + d4, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("magicCrit",        d0, d1 - d3, d2 + d4, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("crit",             d0, d1 + d3, d4 - d2, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("depthsuspend",     d0, d1 + d3, d4 - d2, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("mobSpell",         d0, d1 - d3, d4 + d2, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("instantSpell",     d0, d1 - d3, d4 + d2, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("happyVillager",    d0, d1 + d3, d2 - d4, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("snowballpoof",     d0, d1 + d3, d2 - d4, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("reddust",          d0, d3 - d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("cloud",            d0, d3 - d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("witchMagic",       d0, d3 + d1, d2 - d4, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("spell",            d0, d3 + d1, d2 - d4, 0.0D, 0.0D, 0.0D);
+
+
             player.addChatMessage("§3§lFlash §3§5Activated");
             player.inventory.consumeInventoryItem(Item.enderPearl.itemID);
 
@@ -91,14 +116,9 @@ public class Clock extends Item
             {
                 player.fallDistance = 0;
             }
-
-
-        }
-
         return true;
     }
 
-	
 	@SideOnly(Side.CLIENT)
 	private Icon ClockIcons;
 	

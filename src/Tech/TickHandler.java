@@ -4,6 +4,7 @@
     import cpw.mods.fml.common.TickType;
     import net.minecraft.client.Minecraft;
     import net.minecraft.client.gui.GuiScreen;
+    import Block.Blocks.Fan;
 
     import java.util.EnumSet;
 
@@ -42,6 +43,8 @@
         private void onTickInGame(Minecraft mc)
         {
             // DO STUFF HERE
+
+           Block.Blocks.Fan.UpdateTexture();
         }
         private void onTickInGui(Minecraft mc, GuiScreen gui)
         {
@@ -61,4 +64,3 @@
             return "TickHandler.CLIENT";
         }
     }
-

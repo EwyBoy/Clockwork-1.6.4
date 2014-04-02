@@ -7,6 +7,7 @@ import Item.Technical.Items;
 import Network.PacketHandler;
 import Network.Proxies.CommonProxy;
 import Recipes.registerRecipies;
+import CreativeTabs.CWCreativeTabs;
 import Tech.TickHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -28,7 +29,9 @@ public class Clockwork
 	
 	@SidedProxy(bukkitSide = "", modId = ModInfo.ID, clientSide = "Network.Proxies.ClientProxy", serverSide = "Network.Proxies.CommonProxy")
 	public static CommonProxy proxy;
-	
+
+
+
 	@EventHandler
 	public void PreInit (FMLPreInitializationEvent event)
 	{
@@ -45,10 +48,10 @@ public class Clockwork
 	public void load (FMLInitializationEvent event)
 	{
         Blocks.addNames();
-		registerRecipies.registerRecipie();
+		registerRecipies.registerRecipe();
         Items.RegisterItems();
         Items.addNames();
-
+       CWCreativeTabs.AddCreativeTabs();
         TickRegistry.registerTickHandler(new TickHandler(), Side.CLIENT);
 	}
 	
@@ -56,9 +59,6 @@ public class Clockwork
 	@EventHandler
 	public void ModsLoaded (FMLPreInitializationEvent event)
 	{}
-	
-	public void AddCreativeTabs()
-	{
-		//LanguageRegistry.instance().addStringLocalization("itemGroup.ClockworkTab", "en_US","§7[CW] §r Main.Clockwork");
-	}
+
+
 }

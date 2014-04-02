@@ -12,7 +12,6 @@ public class BlockInfo
 	public static final String Texture = "";
 	
 	*/
-	
 	public static int ClockworkID;
 	public static final String ClockworkKey = "Clockwork";
 	public static final int ClockworkDefault = 2100;
@@ -45,7 +44,15 @@ public class BlockInfo
     public static final String FanTexture09 = "Fan09";
     public static final String FanTexture10 = "Fan10";
 
-  //  public static final String [] FanTexture = {"Fan01","Fan02","Fan03","Fan04","Fan05","Fan06,","Fan07","Fan08","Fan09","Fan10"};
+    public static int NetworkCabelID;
+    public static final String NetworkCabelKey = "NetworkCabel";
+    public static final int NetworkCabelDefault = 2103;
+    public static final String NetworkCabelUnlocalized = "NetworkCabel";
+    public static final String NetworkCabelName = "NetworkCabel";
+    public static final String NetworkCabelTexture = "NetworkCabel";
+
+
+
 	
 
 }

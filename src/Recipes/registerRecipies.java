@@ -9,10 +9,10 @@ public class registerRecipies
 {
 	public static void init()
 	{
-		registerRecipie();
+		registerRecipe();
 	}
 
-	public static void registerRecipie()
+	public static void registerRecipe()
 	{
 		GameRegistry.addRecipe(new ItemStack(Items.Clock , 1 , 0),
 				new Object[] {"XMX","XOX","XMX", 'X', Item.ingotGold, 'M', Item.redstone, 'O', Item.compass});

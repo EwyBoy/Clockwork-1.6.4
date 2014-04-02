@@ -1,7 +1,7 @@
 package Block.Blocks;
 
 import Block.Technical.BlockInfo;
-import Tech.CWCreativeTabs;
+import CreativeTabs.CWCreativeTabs;
 import Textures.TexturePath;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -21,11 +21,10 @@ import java.util.Random;
 
 public class TransBlock extends Block
 {
-	
 	public TransBlock(int par1, boolean par2) 
 	{
 		super(par1, Material.glass);
-		setCreativeTab(CWCreativeTabs.ClockworkTab);
+		setCreativeTab(CWCreativeTabs.ClockworkBlockTab);
 		setUnlocalizedName(BlockInfo.TransUnlocalized);
 		setLightValue(0.750F);
 		setLightOpacity(1);
@@ -46,6 +45,14 @@ public class TransBlock extends Block
 	@SideOnly(Side.CLIENT)
 	public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity)
 	{
+
+        int l = world.getBlockMetadata(x,y,z);
+        double d0 = (double)((float)x + 0.5F);
+        double d1 = (double)((float)y + 0.7F);
+        double d2 = (double)((float)z + 0.5F);
+        double d3 = 0.2199999988079071D;
+        double d4 = 0.27000001072883606D;
+
 		if(entity instanceof EntityPlayer) 
 		   {
                EntityPlayer player = (EntityPlayer) entity;    
@@ -57,7 +64,8 @@ public class TransBlock extends Block
                 EntityPlayer player = (EntityPlayer) entity;
                 fCoord = MathHelper.floor_double((double)((player.rotationYaw * 4F) / 360F) + 0.5D) & 3;
         }
-       
+
+
 
         if(entity instanceof EntityItem){
                 boolean isFound = false;
@@ -66,6 +74,7 @@ public class TransBlock extends Block
                 
  
                 EntityItem item = (EntityItem)entity;
+
                 if(world.getBlockId(x - 2, y, z) == this.blockID ) test.add(posToString(x-2, y, z));
                 if(world.getBlockId(x + 2, y, z) == this.blockID){  test.add(posToString(x+2, y, z)); }
                 if(world.getBlockId(x, y, z - 2) == this.blockID){ test.add(posToString(x, y, z-2)); }
@@ -74,7 +83,21 @@ public class TransBlock extends Block
                 if(world.getBlockId(x - 2, y, z + 2) == this.blockID){  test.add(posToString(x-2, y, z+2)); }
                 if(world.getBlockId(x + 2, y, z - 2) == this.blockID){  test.add(posToString(x+2, y, z-2)); }
                 if(world.getBlockId(x - 2, y, z - 2) == this.blockID){  test.add(posToString(x-2, y, z-2)); }
-               
+
+                world.spawnParticle("mobSpellAmbient",  d0, d1 - d3, d2 + d4, 0.0D, 0.0D, 0.0D);
+                world.spawnParticle("magicCrit",        d0, d1 - d3, d2 + d4, 0.0D, 0.0D, 0.0D);
+                world.spawnParticle("crit",             d0, d1 + d3, d4 - d2, 0.0D, 0.0D, 0.0D);
+                world.spawnParticle("depthsuspend",     d0, d1 + d3, d4 - d2, 0.0D, 0.0D, 0.0D);
+                world.spawnParticle("mobSpell",         d0, d1 - d3, d4 + d2, 0.0D, 0.0D, 0.0D);
+                world.spawnParticle("instantSpell",     d0, d1 - d3, d4 + d2, 0.0D, 0.0D, 0.0D);
+                world.spawnParticle("happyVillager",    d0, d1 + d3, d2 - d4, 0.0D, 0.0D, 0.0D);
+                world.spawnParticle("snowballpoof",     d0, d1 + d3, d2 - d4, 0.0D, 0.0D, 0.0D);
+                world.spawnParticle("reddust",          d0, d3 - d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+                world.spawnParticle("cloud",            d0, d3 - d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+                world.spawnParticle("witchMagic",       d0, d3 + d1, d2 - d4, 0.0D, 0.0D, 0.0D);
+                world.spawnParticle("spell",            d0, d3 + d1, d2 - d4, 0.0D, 0.0D, 0.0D);
+
+
                 int selection = random.nextInt(test.size());
                 String posString = test.get(selection);
                 String[] POS = posString.split(" ");
@@ -85,7 +108,6 @@ public class TransBlock extends Block
         }
          
 	}
-	
 
 	@SideOnly(Side.CLIENT)
 	private Icon TextureIcon;
