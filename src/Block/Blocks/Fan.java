@@ -45,7 +45,7 @@ public class Fan extends Block {
     }
 
     public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4) {
-        float f = 0.05F;
+        float f = 0.01F;
         return AxisAlignedBB.getAABBPool().getAABB((double) par2, (double) par3, (double) par4, (double) (par2 + 1), (double) ((float) (par3 + 1) - f), (double) (par4 + 1));
     }
 
@@ -54,7 +54,7 @@ public class Fan extends Block {
     public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {
         if (entity instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) entity;
-            ((EntityPlayer) entity).addChatMessage("§4Just telling you I'am working");
+            ((EntityPlayer) entity).addChatMessage("§6§lFly! Fly little bird! Fly!");
         }
 
         if (entity.onGround = true) {

@@ -1,5 +1,6 @@
 package Recipes;
 
+import Item.Items.CraftingComponent;
 import Item.Technical.Items;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
@@ -14,10 +15,16 @@ public class registerRecipies
 
 	public static void registerRecipe()
 	{
+
+
 		GameRegistry.addRecipe(new ItemStack(Items.Clock , 1 , 0),
 				new Object[] {"XMX","XOX","XMX", 'X', Item.ingotGold, 'M', Item.redstone, 'O', Item.compass});
+
+        GameRegistry.addRecipe(new ItemStack(Items.CraftingComponent , 3 , 1),
+                new Object[] {  "X", "X", "X", 'X', Item.ingotGold});
+
 	}
-	
+
 	/*{
 		GameRegistry.addRecipe(new ItemStack(Items.CraftingComponent , 1 , 0),
 				new Object[] {  "X", 'X', Item.ingotIron});

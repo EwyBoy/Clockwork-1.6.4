@@ -29,8 +29,7 @@ public class Wrench extends Item
 	private int MODE_Deactivaed = 0;
 	private int MODE_TimeShifting = 1;
 	private int MODE_CwMachine = 2;
-	
-	
+
 	public Wrench (int id) 
 	{
 		super (id);
@@ -39,8 +38,7 @@ public class Wrench extends Item
 		setUnlocalizedName(ItemInfo.WrenchUnlocalized);
 	}
 
-	
-	@Override
+    @Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister register)
 	{
@@ -50,11 +48,9 @@ public class Wrench extends Item
 		WrenchActivatedIcon3 = register.registerIcon(ItemInfo.Texture_Location + ":" + ItemInfo.WrenchTextureActivated03);
 	}
 
-
     @SideOnly(Side.CLIENT)
 	public ItemStack onItemRightClick(ItemStack item, EntityPlayer player, World world, int x, int y, int z, int side, float hitX, float hitY, float hit)
     {
-
         int l = world.getBlockMetadata(x,y,z);
         double d0 = (double)((float)x + 0.5F);
         double d1 = (double)((float)y + 0.7F);
@@ -95,14 +91,13 @@ public class Wrench extends Item
 		{
 			player.addChatMessage("Im Deactivated");
 		}
-		
 		return item;
 	}
 
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemstack, EntityPlayer player, List info, boolean useExtraInformation) 
 	{
-		info.add("Wrench Mode: " + getWrenchType() + " ("+ getWrenchTypeID() + ")");
+		info.add("§eWrench Mode: " + getWrenchType() + " ("+ getWrenchTypeID() + ")");
 	}
 	
 	public String getWrenchType() {
@@ -143,15 +138,15 @@ public class Wrench extends Item
 	
 	public void changeWrench(){
 		if(getWrenchTypeID() == 0){
-			setWrenchType("Time Shifter");
+			setWrenchType("§aTime Shifter");
 			setWrenchTypeID(MODE_TimeShifting);
 			
 		}else if(getWrenchTypeID() == 1){
-			setWrenchType("Machine Mode");
+			setWrenchType("§bMachine Mode");
 			setWrenchTypeID(MODE_CwMachine);
 			
 		}else if(getWrenchTypeID() == 2){
-			setWrenchType("Deactivated");
+			setWrenchType("§7Deactivated");
 			setWrenchTypeID(MODE_Deactivaed);
 		}
 	}

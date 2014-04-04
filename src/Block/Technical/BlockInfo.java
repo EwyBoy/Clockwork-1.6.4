@@ -2,16 +2,15 @@ package Block.Technical;
 
 public class BlockInfo 
 {
-	/*
-	 
+	/**
 	public static int ID;
 	public static final String Key = "";
 	public static final int Default = 2100;
 	public static final String Unlocalized = "";
 	public static final String Name = "";
 	public static final String Texture = "";
-	
-	*/
+	**/
+
 	public static int ClockworkID;
 	public static final String ClockworkKey = "Clockwork";
 	public static final int ClockworkDefault = 2100;
@@ -44,15 +43,12 @@ public class BlockInfo
     public static final String FanTexture09 = "Fan09";
     public static final String FanTexture10 = "Fan10";
 
-    public static int NetworkCabelID;
-    public static final String NetworkCabelKey = "NetworkCabel";
-    public static final int NetworkCabelDefault = 2103;
-    public static final String NetworkCabelUnlocalized = "NetworkCabel";
-    public static final String NetworkCabelName = "NetworkCabel";
-    public static final String NetworkCabelTexture = "NetworkCabel";
-
-
-
-	
+    public static int ConveyorID;
+    public static final String ConveyorKey = "Conveyor";
+    public static final int ConveyorDefault = 2103;
+    public static final String ConveyorUnlocalized = "Conveyor";
+    public static final String ConveyorName = "Conveyor";
+    public static final String ConveyorTexture = "Conveyor";
+    public static final String ConveyorTextureTurn = "ConveyorTurn";
 
 }
