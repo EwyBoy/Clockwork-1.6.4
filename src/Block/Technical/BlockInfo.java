@@ -32,21 +32,16 @@ public class BlockInfo
     public static final String FanUnlocalized = "Fan";
     public static final String FanName = "Fan";
 
-    public static final String FanTexture01 = "Fan01";
-    public static final String FanTexture02 = "Fan02";
-    public static final String FanTexture03 = "Fan03";
-    public static final String FanTexture04 = "Fan04";
-    public static final String FanTexture05 = "Fan05";
-    public static final String FanTexture06 = "Fan06";
-    public static final String FanTexture07 = "Fan07";
-    public static final String FanTexture08 = "Fan08";
-    public static final String FanTexture09 = "Fan09";
-    public static final String FanTexture10 = "Fan10";
+    public static final String FanTexture = "FanSprite";
 
     public static int ConveyorID;
+    public static int ConveyorID1;
     public static final String ConveyorKey = "Conveyor";
+    public static final String ConveyorKey1 = "Conveyor1";
     public static final int ConveyorDefault = 2103;
+    public static final int ConveyorDefault1 = 2104;
     public static final String ConveyorUnlocalized = "Conveyor";
+    public static final String ConveyorUnlocalized1 = "Conveyor";
     public static final String ConveyorName = "Conveyor";
     public static final String ConveyorTexture = "Conveyor";
     public static final String ConveyorTextureTurn = "ConveyorTurn";

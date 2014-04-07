@@ -4,7 +4,7 @@ import Block.Technical.BlockInfo;
 import Block.Texture.TextureHandler;
 import CreativeTabs.CWCreativeTabs;
 import Engines.ConveyorEngine;
-import Tech.Coordinate;
+import TechnicalTools.Coordinate;
 import Tile.TileEntity.TileEntityConveyor;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -43,7 +43,7 @@ public class Conveyor extends ConveyorEngine
 
         public boolean isBlockSolid()
         {
-    	    return true;
+    	    return false;
         }
 
         public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving entity)
@@ -185,8 +185,89 @@ public class Conveyor extends ConveyorEngine
                 par5Entity.motionX = par5Entity.motionX + ax[a] * m_speed;
                 //if(!(Math.signum(par5Entity.motionZ)==az[a] & Math.abs(par5Entity.motionZ)>=3*m_speed))
                 par5Entity.motionZ = par5Entity.motionZ + az[a] * m_speed;
+
+                //Other codes
+
+                if(!par1World.isRemote && par5Entity instanceof EntityItem)
+                {
+                    specialRoute(par1World, par2, par3, par4, (EntityItem)par5Entity);
+                }
+
+                double xVelocity = 0;
+                double yVelocity = 0;
+                double zVelocity = 0;
+
+                int md = par1World.getBlockMetadata(par2, par3, par4);
+
+                int horizDirection = md & 0x03;
+                boolean isUphill = (md & 0x04) != 0;
+                boolean isDownhill = (md & 0x08) != 0;
+
+                if(isUphill)
+                {
+                    yVelocity = 0.25D;
+                }
+
+                if(isUphill || isDownhill)
+                {
+                    par5Entity.onGround = false;
+                }
+
+                if(horizDirection == 0)
+                {
+                    xVelocity = 0.1D;
+                }
+                else if(horizDirection == 1)
+                {
+                    zVelocity = 0.1D;
+                }
+                else if(horizDirection == 2)
+                {
+                    xVelocity = 0.1D;
+                }
+                else if(horizDirection == 3)
+                {
+                    zVelocity = 0.1D;
+                }
+
+                if(horizDirection == 0 || horizDirection == 2)
+                {
+                    if(par5Entity.posZ > par4 + 0.55D)
+                    {
+                        zVelocity = -0.1D;
+                    }
+                    else if(par5Entity.posZ < par4 + 0.45D)
+                    {
+                        zVelocity = 0.1D;
+                    }
+                }
+                else if(horizDirection == 1 || horizDirection == 3)
+                {
+                    if(par5Entity.posX > par2 + 0.55D)
+                    {
+                        xVelocity = -0.1D;
+                    }
+                    else if(par5Entity.posX < par2 + 0.45D)
+                    {
+                        xVelocity = 0.1D;
+                    }
+                }
+
+
+
+                setEntityVelocity(par5Entity, xVelocity, yVelocity, zVelocity);
+
+                if(par5Entity instanceof EntityLiving)
+                {
+                    ((EntityLiving)par5Entity).fallDistance = 0;
+                }
+                else if(par5Entity instanceof EntityItem)
+                {
+                    ((EntityItem)par5Entity).delayBeforeCanPickup = 40;
+                }
             }
-        }
+            }
+
 
     /*public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
     {
@@ -462,8 +543,7 @@ public class Conveyor extends ConveyorEngine
 
         /**
          @Override
-         public void onEntityCollidedWithBlock(World world, int x, int y,
-         int z, Entity entity) {
+         public void onEntityCollidedWithBlock(World world, int x, int y,int z, Entity entity) {
 
          double xVelocity = 1;
          double yVelocity = 2;

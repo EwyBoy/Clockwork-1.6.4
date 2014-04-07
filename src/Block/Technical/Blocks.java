@@ -3,6 +3,7 @@ package Block.Technical;
 import Block.Blocks.Fan;
 import Block.Blocks.TransBlock;
 import Block.Blocks.Conveyor;
+import Block.Blocks.ConveyorTest;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
@@ -13,6 +14,7 @@ public class Blocks
 	public static Block Trans;
     public static Block Fan;
     public static Block Conveyor;
+    public static Block ConveyorTest;
 
 	public static void init()
 	{
@@ -30,6 +32,9 @@ public class Blocks
 
         Conveyor = new Conveyor(BlockInfo.ConveyorID, false).setUnlocalizedName(BlockInfo.ConveyorUnlocalized);
         GameRegistry.registerBlock(Conveyor, BlockInfo.ConveyorKey);
+
+        ConveyorTest = new ConveyorTest(BlockInfo.ConveyorID1, false).setUnlocalizedName(BlockInfo.ConveyorUnlocalized1);
+        GameRegistry.registerBlock(ConveyorTest, BlockInfo.ConveyorKey1);
     }
 
 	public static void addNames()

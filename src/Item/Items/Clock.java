@@ -1,13 +1,13 @@
 package Item.Items;
 
-import Item.Technical.ItemInfo;
 import CreativeTabs.CWCreativeTabs;
+import Item.Technical.ItemInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.command.SyntaxErrorException;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
@@ -18,8 +18,6 @@ import java.util.List;
 
 public class Clock extends Item
 {
-    private int counter = 20;
-
     public Clock(int id) 
 	{
 		super(id);
@@ -28,6 +26,10 @@ public class Clock extends Item
 		setMaxDamage(5);
 		setUnlocalizedName(ItemInfo.ClockUnlocalized);
     }
+
+    public static final String[] ClockActivated = new String[] {"Clock", "Clock 1", "Clock 2"};
+    @SideOnly(Side.CLIENT)
+    private Icon[] iconArray;
 
     @Override
     @SideOnly(Side.CLIENT)
@@ -40,6 +42,10 @@ public class Clock extends Item
 	    {
 	        return 1;
 	    }
+    public Icon getItemIconForUseDuration(int par1)
+    {
+        return this.iconArray[par1];
+    }
 	 public int getMaxItemUseDuration(ItemStack par1ItemStack)
 	    {
 	        return 72000;
@@ -48,6 +54,11 @@ public class Clock extends Item
 	    {
 	        return par1ItemStack;
 	    }
+
+    public EnumAction getItemUseAction(ItemStack par1ItemStack)
+    {
+        return EnumAction.bow;
+    }
 
 	@Override
 	@SideOnly(Side.CLIENT)
@@ -65,7 +76,7 @@ public class Clock extends Item
 
     @Override
 	@SideOnly(Side.CLIENT)
-	public boolean onItemUseFirst(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float hitX, float hitY, float hit) 
+	public boolean onItemUseFirst(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float hitX, float hitY, float hit)
 	{
              int l = world.getBlockMetadata(x,y,z);
              double d0 = (double)((float)x + 0.5F);
@@ -74,7 +85,9 @@ public class Clock extends Item
              double d3 = 0.2199999988079071D;
              double d4 = 0.27000001072883606D;
 
-            world.spawnParticle("mobSpellAmbient",  d0, d1 - d3, d2 + d4, 0.0D, 0.0D, 0.0D);
+            world.playSound((double)x + 0.5D, (double)y + 0.5D, (double)z + 0.5D, "mob.endermen.portal", 0.5F, hitY * 0.4F + 0.8F, false);
+
+           /** world.spawnParticle("mobSpellAmbient",  d0, d1 - d3, d2 + d4, 0.0D, 0.0D, 0.0D);
             world.spawnParticle("magicCrit",        d0, d1 - d3, d2 + d4, 0.0D, 0.0D, 0.0D);
             world.spawnParticle("crit",             d0, d1 + d3, d4 - d2, 0.0D, 0.0D, 0.0D);
             world.spawnParticle("depthsuspend",     d0, d1 + d3, d4 - d2, 0.0D, 0.0D, 0.0D);
@@ -97,8 +110,21 @@ public class Clock extends Item
             world.spawnParticle("reddust",          d0, d3 - d1, d2 + d4, 0.0D, 0.0D, 0.0D);
             world.spawnParticle("cloud",            d0, d3 - d1, d2 + d4, 0.0D, 0.0D, 0.0D);
             world.spawnParticle("witchMagic",       d0, d3 + d1, d2 - d4, 0.0D, 0.0D, 0.0D);
-            world.spawnParticle("spell",            d0, d3 + d1, d2 - d4, 0.0D, 0.0D, 0.0D);
-            player.addChatMessage("§6§oFlash §e§oActivated");
+*/
+            world.spawnParticle("spell",            d0, d3 + d1, d2 - d4, player.posX, player.posY, player.posZ);
+            world.spawnParticle("spell",            d0, d3 + d1, d2 - d4, player.posX, player.posY, player.posZ);
+            world.spawnParticle("spell",            d0, d3 + d1, d2 - d4, player.posX, player.posY, player.posZ);
+            world.spawnParticle("spell",            d0, d3 + d1, d2 - d4, player.posX, player.posY, player.posZ);
+            world.spawnParticle("spell",            d0, d3 + d1, d2 - d4, player.posX, player.posY, player.posZ);
+            world.spawnParticle("spell",            d0, d3 + d1, d2 - d4, player.posX, player.posY, player.posZ);
+            world.spawnParticle("spell",            d0, d3 + d1, d2 - d4, player.posX, player.posY, player.posZ);
+            world.spawnParticle("spell",            d0, d3 + d1, d2 - d4, player.posX, player.posY, player.posZ);
+            world.spawnParticle("spell",            d0, d3 + d1, d2 - d4, player.posX, player.posY, player.posZ);
+            world.spawnParticle("spell",            d0, d3 + d1, d2 - d4, player.posX, player.posY, player.posZ);
+            world.spawnParticle("spell",            d0, d3 + d1, d2 - d4, player.posX, player.posY, player.posZ);
+
+
+        player.addChatMessage("§6§oFlash §e§oActivated");
             player.inventory.consumeInventoryItem(Item.enderPearl.itemID);
 
             double X = player.posX;
@@ -143,4 +169,9 @@ public class Clock extends Item
 	{
 		return ClockIcons;
 	}
+
+    public void onPlayerStoppedUsing(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer, int par4)
+    {
+        int j = this.getMaxItemUseDuration(par1ItemStack) - par4;
+    }
 }

@@ -1,4 +1,4 @@
-package Tech;
+package TechnicalTools;
 
 public class Coordinate {
 	int x;

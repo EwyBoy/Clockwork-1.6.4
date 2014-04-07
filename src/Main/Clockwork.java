@@ -8,7 +8,7 @@ import Network.PacketHandler;
 import Network.Proxies.CommonProxy;
 import Recipes.registerRecipies;
 import CreativeTabs.CWCreativeTabs;
-import Tech.TickHandler;
+import TechnicalTools.TickHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;

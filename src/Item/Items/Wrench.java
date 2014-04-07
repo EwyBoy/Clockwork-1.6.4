@@ -58,6 +58,8 @@ public class Wrench extends Item
         double d3 = 0.2199999988079071D;
         double d4 = 0.27000001072883606D;
 
+        world.playSound((double)x + 0.5D, (double)y + 0.5D, (double)z + 0.5D, "random.anvil_land", 0.5F, hitY * 0.4F + 0.8F, false);
+
         world.spawnParticle("mobSpellAmbient",  d0, d1 - d3, d2 + d4, 0.0D, 0.0D, 0.0D);
         world.spawnParticle("magicCrit",        d0, d1 - d3, d2 + d4, 0.0D, 0.0D, 0.0D);
         world.spawnParticle("crit",             d0, d1 + d3, d4 - d2, 0.0D, 0.0D, 0.0D);
@@ -140,6 +142,7 @@ public class Wrench extends Item
 		if(getWrenchTypeID() == 0){
 			setWrenchType("§aTime Shifter");
 			setWrenchTypeID(MODE_TimeShifting);
+
 			
 		}else if(getWrenchTypeID() == 1){
 			setWrenchType("§bMachine Mode");

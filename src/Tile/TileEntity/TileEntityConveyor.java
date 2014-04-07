@@ -2,7 +2,7 @@ package Tile.TileEntity;
 
 import java.util.HashMap;
 import java.util.Map;
-import Tech.Coordinate;
+import TechnicalTools.Coordinate;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 
