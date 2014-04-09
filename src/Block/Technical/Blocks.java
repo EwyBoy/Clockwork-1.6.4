@@ -1,13 +1,10 @@
 package Block.Technical;
 
-import Block.Blocks.Fan;
-import Block.Blocks.TransBlock;
-import Block.Blocks.Conveyor;
-import Block.Blocks.ConveyorTest;
-import Block.Blocks.Router;
+import Block.Blocks.*;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
+
 
 public class Blocks 
 {
@@ -39,6 +36,9 @@ public class Blocks
 
         Router = new Router(BlockInfo.RouterID, false).setUnlocalizedName(BlockInfo.RouterUnlocalized);
         GameRegistry.registerBlock(Router, BlockInfo.RouterKey);
+
+
+
     }
 
 	public static void addNames()

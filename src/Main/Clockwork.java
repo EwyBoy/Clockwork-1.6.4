@@ -2,13 +2,16 @@ package Main;
 
 import Block.Technical.Blocks;
 import Config.ConfigHandler;
+import CreativeTabs.CWCreativeTabs;
 import Info.ModInfo;
 import Item.Technical.Items;
 import Network.PacketHandler;
 import Network.Proxies.CommonProxy;
 import Recipes.registerRecipies;
-import CreativeTabs.CWCreativeTabs;
+import Recipes.registerSmelting;
 import TechnicalTools.TickHandler;
+import WorldGen.Technical.Ores;
+import WorldGen.WorldGenerator.WorldGenerator;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -42,16 +45,21 @@ public class Clockwork
 		proxy.registerRenderThings();
 		Blocks.init();
         Items.init();
-	}
+        Ores.init();
+        WorldGenerator.init();
+
+    }
 
 	@EventHandler
 	public void load (FMLInitializationEvent event)
 	{
         Blocks.addNames();
+        Ores.addNames();
 		registerRecipies.registerRecipe();
+        registerSmelting.registerSmelting();
         Items.RegisterItems();
         Items.addNames();
-       CWCreativeTabs.AddCreativeTabs();
+        CWCreativeTabs.AddCreativeTabs();
         TickRegistry.registerTickHandler(new TickHandler(), Side.CLIENT);
 	}
 	

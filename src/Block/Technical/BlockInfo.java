@@ -4,11 +4,11 @@ public class BlockInfo
 {
 	/**
 	public static int ID;
-	public static final String Key = "";
-	public static final int Default = 2100;
-	public static final String Unlocalized = "";
-	public static final String Name = "";
-	public static final String Texture = "";
+     public static final String Key = "";
+     public static final int Default = 2100;
+     public static final String Unlocalized = "";
+     public static final String Name = "";
+     public static final String Texture = "";
 	**/
 
 	public static int ClockworkID;
@@ -48,7 +48,7 @@ public class BlockInfo
 
     public static int RouterID;
     public static final String RouterKey = "Router";
-    public static final int RouterDefault = 2100;
+    public static final int RouterDefault = 2104;
     public static final String RouterUnlocalized = "Router";
     public static final String RouterName = "Conveyor Item Router";
     public static final String RouterSideTexture = "Router";
