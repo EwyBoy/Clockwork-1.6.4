@@ -103,7 +103,6 @@ public class TransBlock extends Block
                 String X = POS[0], Y = POS[1], Z = POS[2];
                 int iX = Integer.parseInt(X), iY = Integer.parseInt(Y), iZ = Integer.parseInt(Z);
                 entity.setPosition(iX, iY, iZ);
-          
         }
          
 	}

@@ -43,7 +43,15 @@ public class BlockInfo
     public static final String ConveyorUnlocalized = "Conveyor";
     public static final String ConveyorUnlocalized1 = "Conveyor";
     public static final String ConveyorName = "Conveyor";
-    public static final String ConveyorTexture = "Conveyor";
+    public static final String ConveyorTexture = "ConveyorSprite";
     public static final String ConveyorTextureTurn = "ConveyorTurn";
+
+    public static int RouterID;
+    public static final String RouterKey = "Router";
+    public static final int RouterDefault = 2100;
+    public static final String RouterUnlocalized = "Router";
+    public static final String RouterName = "Conveyor Item Router";
+    public static final String RouterSideTexture = "Router";
+    public static final String RouterTopTexture = "RouterTop";
 
 }

@@ -17,6 +17,7 @@ public class ConfigHandler
 			BlockInfo.TransID = Config.getBlock(BlockInfo.TransKey, BlockInfo.TransDefault).getInt();
             BlockInfo.ConveyorID = Config.getBlock(BlockInfo.ConveyorKey, BlockInfo.ConveyorDefault).getInt();
             BlockInfo.ConveyorID1 = Config.getBlock(BlockInfo.ConveyorKey1, BlockInfo.ConveyorDefault1).getInt();
+            BlockInfo.RouterID = Config.getBlock(BlockInfo.RouterKey, BlockInfo.RouterDefault).getInt();
 
 			ItemInfo.CraftingComponentID = Config.getItem(ItemInfo.CraftingComponentKey,  ItemInfo.CraftingComponentDefault).getInt()-256;
 			ItemInfo.WrenchID = Config.getItem(ItemInfo.WrenchKey, ItemInfo.WrenchDefault).getInt()-256;

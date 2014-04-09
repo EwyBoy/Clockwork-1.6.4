@@ -4,10 +4,10 @@ import Block.Blocks.Fan;
 import Block.Blocks.TransBlock;
 import Block.Blocks.Conveyor;
 import Block.Blocks.ConveyorTest;
+import Block.Blocks.Router;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
-
 
 public class Blocks 
 {
@@ -15,6 +15,7 @@ public class Blocks
     public static Block Fan;
     public static Block Conveyor;
     public static Block ConveyorTest;
+    public static Block Router;
 
 	public static void init()
 	{
@@ -35,6 +36,9 @@ public class Blocks
 
         ConveyorTest = new ConveyorTest(BlockInfo.ConveyorID1, false).setUnlocalizedName(BlockInfo.ConveyorUnlocalized1);
         GameRegistry.registerBlock(ConveyorTest, BlockInfo.ConveyorKey1);
+
+        Router = new Router(BlockInfo.RouterID, false).setUnlocalizedName(BlockInfo.RouterUnlocalized);
+        GameRegistry.registerBlock(Router, BlockInfo.RouterKey);
     }
 
 	public static void addNames()
@@ -42,6 +46,7 @@ public class Blocks
 		LanguageRegistry.addName(Trans, BlockInfo.TransName);
         LanguageRegistry.addName(Fan, BlockInfo.FanName);
         LanguageRegistry.addName(Conveyor, BlockInfo.ConveyorName);
+        LanguageRegistry.addName(Router, BlockInfo.RouterName);
 	}
 
 	
