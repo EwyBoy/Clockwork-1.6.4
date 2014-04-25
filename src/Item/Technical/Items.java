@@ -1,8 +1,11 @@
 package Item.Technical;
 
-import Item.Items.Clock;
+import Item.Items.RodOfAges;
 import Item.Items.Wrench;
 import Item.Items.CraftingComponent;
+import Item.Items.Dust;
+import Item.Items.Ingot;
+import Item.Items.Clock;
 import KeyBindings.WrenchKeyBind;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.client.settings.KeyBinding;
@@ -16,6 +19,9 @@ public class Items
     public static Item Clock;
     public static Item Wrench;
     public static Item CraftingComponent;
+    public static Item Dust;
+    public static Item Ingot;
+    public static Item RodOfAges;
 
     public static void init()
     {
@@ -30,15 +36,19 @@ public class Items
 
     public static void RegisterItems()
     {
-        Clock = new Clock (ItemInfo.ClockID);
+        Clock = new Clock(ItemInfo.ClockID);
         Wrench = new Wrench (ItemInfo.WrenchID);
+        RodOfAges = new RodOfAges(ItemInfo.RodOfAgesID);
         CraftingComponent =  new CraftingComponent (ItemInfo.CraftingComponentID);
+        Dust = new Dust (ItemInfo.DustID);
+        Ingot = new Ingot (ItemInfo.IngotID);
     }
 
     public static void addNames()
     {
         LanguageRegistry.addName(Clock, ItemInfo.ClockName);
         LanguageRegistry.addName(Wrench, ItemInfo.WrenchName);
+        LanguageRegistry.addName(RodOfAges, ItemInfo.RodOfAgesName);
 
         for (int i = 0; i < ItemInfo.CraftingComponentNames.length; i++)
         {

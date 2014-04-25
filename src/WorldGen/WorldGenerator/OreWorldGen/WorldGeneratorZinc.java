@@ -26,7 +26,7 @@
             {
                 int Xcoord = BlockX + random.nextInt(16);
                 int Zcoord = BlockZ + random.nextInt(16);
-                int Ycoord = random.nextInt(64);
+                int Ycoord = random.nextInt(16);
 
                 (new WorldGenMinable(OreInfo.OreZincDefault, 2)).generate(world, random, Xcoord, Ycoord, Zcoord);
             }

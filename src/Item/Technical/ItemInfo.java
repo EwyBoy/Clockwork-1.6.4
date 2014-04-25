@@ -29,6 +29,33 @@ public class ItemInfo
     public static final String WrenchTextureActivated03 = "WrenchActivated03";
     public static final String WrenchTextureDeactivated = "WrenchDeactivated";
 
+    public static int IngotID;
+    public static final String IngotKey = "Ingot";
+    public static final int IngotDefault = 12680;
+    public static final String IngotUnlocalized = "Ingot";
+    public static final String[] IngotNames =
+            {
+                "IngotCopper", "IngotTin", "IngotZinc", "IngotBronze", "IngotBrass"
+            };
+    public static final String [] IngotTexture =
+            {
+                "IngotCopper", "IngotTin", "IngotZinc", "IngotBronze", "IngotBrass"
+            };
+
+    public static int DustID;
+    public static final String DustKey = "Dust";
+    public static final int DustDefault = 12681;
+    public static final String DustUnlocalized = "Dust";
+    public static final String[] DustNames =
+            {
+                    "DustCopper", "DustTin", "DustZinc", "DustBronze", "DustBrass"
+            };
+    public static final String [] DustTexture =
+            {
+                    "DustCopper", "DustTin", "DustZinc", "DustBronze", "DustBrass"
+            };
+
+
     public static int CraftingComponentID;
     public static final String CraftingComponentKey = "CraftingComponent";
     public static final int CraftingComponentDefault = 12677;
@@ -37,11 +64,18 @@ public class ItemInfo
 
     public static final String[] CraftingComponentNames =
             {
-                    "§6§lGear" , "§6§lConveyor Roller", "§6§lConveyor Strip", "§6§lWrench Head", "§6§lWrench Core", "§6§lWrench Handel"
+                    "§6§lBronze Gear", "§6§lBrass Gear" , "§6§lConveyor Roller", "§6§lConveyor Strip", "§6§lWrench Head", "§6§lWrench Core", "§6§lWrench Handel"
             };
 
     public static final String [] CraftingComponentIcons =
             {
-                    "Gear", "ConveyorRoller", "ConveyorStrip", "WrenchHead", "WrenchCore", "WrenchHandel"
+                    "GearBronze","GearBrass", "ConveyorRoller", "ConveyorStrip", "WrenchHead", "WrenchCore", "WrenchHandel"
             };
+
+    public static int RodOfAgesID;
+    public static final String RodOfAgesKey = "RodOfAges";
+    public static final int RodOfAgesDefault = 12678;
+    public static final String RodOfAgesUnlocalized = "RodOfAges";
+    public static final String RodOfAgesName = "Rod Of Ages";
+    public static final String RodOfAgesTexture = "Prank";
 }

@@ -30,8 +30,7 @@ public class CraftingComponent extends Item
 	{
 		return ItemInfo.CraftingComponetUnloaclized + itemstack.getItemDamage();
 	}
-	
-	
+
 	@Override
 	@SideOnly (Side.CLIENT)
 	public void registerIcons(IconRegister register)

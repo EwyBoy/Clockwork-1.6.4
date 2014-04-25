@@ -26,9 +26,9 @@ public class WorldGeneratorCopper implements IWorldGenerator {
         {
             int Xcoord = BlockX + random.nextInt(16);
             int Zcoord = BlockZ + random.nextInt(16);
-            int Ycoord = random.nextInt(64);
+            int Ycoord = random.nextInt(48);
 
-            (new WorldGenMinable(OreInfo.OreCopperDefault, 8)).generate(world, random, Xcoord, Ycoord, Zcoord);
+            (new WorldGenMinable(OreInfo.OreCopperDefault, 4)).generate(world, random, Xcoord, Ycoord, Zcoord);
         }
     }
 }

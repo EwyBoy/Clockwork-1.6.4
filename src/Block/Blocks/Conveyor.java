@@ -253,8 +253,6 @@ public class Conveyor extends ConveyorEngine
                     }
                 }
 
-
-
                 setEntityVelocity(par5Entity, xVelocity, yVelocity, zVelocity);
 
                 if(par5Entity instanceof EntityLiving)

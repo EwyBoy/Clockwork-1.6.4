@@ -74,8 +74,6 @@ public class Clock extends Item
 		return false;
 	}
 
-    @Override
-	@SideOnly(Side.CLIENT)
 	public boolean onItemUseFirst(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float hitX, float hitY, float hit)
 	{
              int l = world.getBlockMetadata(x,y,z);
@@ -146,11 +144,8 @@ public class Clock extends Item
             player.moveEntity(X, 0.0, Z);
             player.setPosition(X, player.posY, Z);
 
-            if (player.onGround = true)
-            {
-                player.fallDistance = 0;
-            }
         return true;
+
     }
 
 	@SideOnly(Side.CLIENT)

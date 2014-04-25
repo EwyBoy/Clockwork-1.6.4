@@ -26,7 +26,10 @@ public class ConfigHandler
 
 			ItemInfo.CraftingComponentID = Config.getItem(ItemInfo.CraftingComponentKey,  ItemInfo.CraftingComponentDefault).getInt()-256;
 			ItemInfo.WrenchID = Config.getItem(ItemInfo.WrenchKey, ItemInfo.WrenchDefault).getInt()-256;
+            ItemInfo.RodOfAgesID = Config.getItem(ItemInfo.RodOfAgesKey, ItemInfo.RodOfAgesDefault).getInt()-256;
 			ItemInfo.ClockID = Config.getItem(ItemInfo.ClockKey, ItemInfo.ClockDefault).getInt()-256;
+            ItemInfo.DustID = Config.getItem(ItemInfo.DustKey, ItemInfo.DustDefault).getInt()-256;
+            ItemInfo.IngotID = Config.getItem(ItemInfo.IngotKey, ItemInfo.IngotDefault).getInt()-256;
 			
 			Config.save();
 		}

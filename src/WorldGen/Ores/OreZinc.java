@@ -3,12 +3,15 @@ package WorldGen.Ores;
 import CreativeTabs.CWCreativeTabs;
 import Textures.TexturePath;
 import WorldGen.Technical.OreInfo;
+import WorldGen.Technical.Ores;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
+
+import java.util.Random;
 
 public class OreZinc extends Block
 {
@@ -26,6 +29,15 @@ public class OreZinc extends Block
     public void registerIcons(IconRegister register)
     {
         TextureIcon = register.registerIcon(TexturePath.TextureLocation + ":" +  OreInfo.OreZincTexture);
+    }
+
+    public int idDropped(int par1, Random par2Random, int par3)
+    {
+        return Ores.OreZinc.blockID;
+    }
+    public int quantityDropped(Random random)
+    {
+        return 1;
     }
 
     @SideOnly(Side.CLIENT)

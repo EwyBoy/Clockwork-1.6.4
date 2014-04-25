@@ -26,9 +26,9 @@ public class WorldGeneratorTin implements IWorldGenerator {
         {
             int Xcoord = BlockX + random.nextInt(16);
             int Zcoord = BlockZ + random.nextInt(16);
-            int Ycoord = random.nextInt(64);
+            int Ycoord = random.nextInt(32);
 
-            (new WorldGenMinable(OreInfo.OreTinDefault, 4)).generate(world, random, Xcoord, Ycoord, Zcoord);
+            (new WorldGenMinable(OreInfo.OreTinDefault, 3)).generate(world, random, Xcoord, Ycoord, Zcoord);
         }
     }
 }
