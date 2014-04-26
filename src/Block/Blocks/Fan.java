@@ -78,7 +78,8 @@ public class Fan extends Block {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister register) {
+    public void registerIcons(IconRegister register)
+    {
         TextureIconSide = register.registerIcon(TexturePath.TextureLocation + ":" + BlockInfo.TransTextureSide);
         FanTexture = register.registerIcon(TexturePath.TextureLocation + ":" + BlockInfo.FanTexture);
     }

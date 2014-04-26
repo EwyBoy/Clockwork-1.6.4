@@ -54,6 +54,17 @@ public class Items
         {
             LanguageRegistry.addName(new ItemStack(CraftingComponent, 1, i), ItemInfo.CraftingComponentNames[i]);
         }
+
+        for (int i = 0; i < ItemInfo.DustNames.length; i++)
+        {
+            LanguageRegistry.addName(new ItemStack(Dust, 1, i), ItemInfo.DustNames[i]);
+        }
+
+        for (int i = 0; i < ItemInfo.IngotNames.length; i++)
+        {
+            LanguageRegistry.addName(new ItemStack(Ingot, 1, i), ItemInfo.IngotNames[i]);
+        }
+
     }
 
 }

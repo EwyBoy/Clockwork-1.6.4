@@ -367,16 +367,6 @@ public class Conveyor extends ConveyorEngine
             TextureTurn = register.registerIcon(TextureHandler.TextureLocation + ":" +  BlockInfo.ConveyorTextureTurn);
         }
 
-
-
-        @SideOnly(Side.CLIENT)
-        public void addInformation(ItemStack itemstack, EntityPlayer player, List info, boolean useExtraInformation)
-        {
-            info.add("Used for transporing,");
-            info.add("varius stuff around your world");
-        }
-
-
         @Override
         @SideOnly(Side.CLIENT)
         public Icon getIcon(int side, int meta)

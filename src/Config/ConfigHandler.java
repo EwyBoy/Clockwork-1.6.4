@@ -19,6 +19,7 @@ public class ConfigHandler
             BlockInfo.ConveyorID = Config.getBlock(BlockInfo.ConveyorKey, BlockInfo.ConveyorDefault).getInt();
             BlockInfo.ConveyorID1 = Config.getBlock(BlockInfo.ConveyorKey1, BlockInfo.ConveyorDefault1).getInt();
             BlockInfo.RouterID = Config.getBlock(BlockInfo.RouterKey, BlockInfo.RouterDefault).getInt();
+            BlockInfo.MetalsID = Config.getBlock(BlockInfo.MetalsKey, BlockInfo.MetalsDefault).getInt();
 
             OreInfo.OreCopperID = Config.getBlock(OreInfo.OreCopperKey, OreInfo.OreCopperDefault).getInt();
             OreInfo.OreTinID = Config.getBlock(OreInfo.OreTinKey, OreInfo.OreTinDefault).getInt();

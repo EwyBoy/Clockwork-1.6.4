@@ -4,6 +4,7 @@ import Block.Blocks.*;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.item.ItemStack;
 
 
 public class Blocks 
@@ -13,6 +14,7 @@ public class Blocks
     public static Block Conveyor;
     public static Block ConveyorTest;
     public static Block Router;
+    public static Block Metals;
 
 	public static void init()
 	{
@@ -37,8 +39,8 @@ public class Blocks
         Router = new Router(BlockInfo.RouterID, false).setUnlocalizedName(BlockInfo.RouterUnlocalized);
         GameRegistry.registerBlock(Router, BlockInfo.RouterKey);
 
-
-
+        Metals = new Metals (BlockInfo.MetalsID, false).setUnlocalizedName(BlockInfo.MetalsUnlocalized);
+        GameRegistry.registerBlock(Metals, BlockInfo.MetalsKey);
     }
 
 	public static void addNames()
@@ -47,6 +49,11 @@ public class Blocks
         LanguageRegistry.addName(Fan, BlockInfo.FanName);
         LanguageRegistry.addName(Conveyor, BlockInfo.ConveyorName);
         LanguageRegistry.addName(Router, BlockInfo.RouterName);
+
+        for (int i = 0; i < BlockInfo.MetalsNames.length; i++)
+        {
+            LanguageRegistry.addName(new ItemStack(Metals, 1, i), BlockInfo.MetalsNames[i]);
+        }
 	}
 
 	

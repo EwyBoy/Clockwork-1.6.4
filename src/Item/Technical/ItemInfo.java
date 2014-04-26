@@ -35,7 +35,7 @@ public class ItemInfo
     public static final String IngotUnlocalized = "Ingot";
     public static final String[] IngotNames =
             {
-                "IngotCopper", "IngotTin", "IngotZinc", "IngotBronze", "IngotBrass"
+                "Copper Ingot", "Tin Ingot", "Zinc Ingot", "Bronze Ingot", "Brass Ingot"
             };
     public static final String [] IngotTexture =
             {
@@ -48,7 +48,7 @@ public class ItemInfo
     public static final String DustUnlocalized = "Dust";
     public static final String[] DustNames =
             {
-                    "DustCopper", "DustTin", "DustZinc", "DustBronze", "DustBrass"
+                    "Copper Dust", "Tin Dust", "Zinc Dust", "Bronze Dust", "Brass Dust"
             };
     public static final String [] DustTexture =
             {

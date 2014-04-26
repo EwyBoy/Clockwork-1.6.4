@@ -54,4 +54,16 @@ public class BlockInfo
     public static final String RouterSideTexture = "Router";
     public static final String RouterTopTexture = "RouterTop";
 
+    public static int MetalsID;
+    public static final String MetalsKey = "Dust";
+    public static final int MetalsDefault = 2105;
+    public static final String MetalsUnlocalized = "Dust";
+    public static final String[] MetalsNames =
+            {
+                    "Block Of Copper", "Block Of Tin", "Block Of Zinc", "Block Of Bronze", "Block Of Brass"
+            };
+    public static final String [] MetalsTexture =
+            {
+                    "MetalsCopper", "MetalsTin", "MetalsZinc", "MetalsBronze", "MetalsBrass"
+            };
 }

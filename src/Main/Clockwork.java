@@ -1,6 +1,6 @@
 package Main;
 
-import Block.Technical.Blocks;
+    import Block.Technical.Blocks;
 import Config.ConfigHandler;
 import CreativeTabs.CWCreativeTabs;
 import Info.ModInfo;
@@ -22,18 +22,16 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.TickRegistry;
 import cpw.mods.fml.relauncher.Side;
 
-@Mod (modid = ModInfo.ID, name = ModInfo.Name, version = ModInfo.Version)
-@NetworkMod (channels = {ModInfo.Channel}, clientSideRequired = true, serverSideRequired = false, packetHandler = PacketHandler.class)
+    @Mod (modid = ModInfo.ID, name = ModInfo.Name, version = ModInfo.Version)
+    @NetworkMod (channels = {ModInfo.Channel}, clientSideRequired = true, serverSideRequired = false, packetHandler = PacketHandler.class)
 
-public class Clockwork 
-{
-	@Instance (ModInfo.ID)
-	public static Clockwork instance;
+    public class Clockwork
+    {
+	    @Instance (ModInfo.ID)
+	    public static Clockwork instance;
 	
-	@SidedProxy(bukkitSide = "", modId = ModInfo.ID, clientSide = "Network.Proxies.ClientProxy", serverSide = "Network.Proxies.CommonProxy")
-	public static CommonProxy proxy;
-
-
+	    @SidedProxy(bukkitSide = "", modId = ModInfo.ID, clientSide = "Network.Proxies.ClientProxy", serverSide = "Network.Proxies.CommonProxy")
+	    public static CommonProxy proxy;
 
 	@EventHandler
 	public void PreInit (FMLPreInitializationEvent event)

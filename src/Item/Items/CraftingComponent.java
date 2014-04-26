@@ -4,6 +4,7 @@ import java.util.List;
 
 import Item.Technical.ItemInfo;
 import CreativeTabs.CWCreativeTabs;
+import Main.Clockwork;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -47,6 +48,11 @@ public class CraftingComponent extends Item
 	{
 		info.add("§eUsed for Crafting,");
 		info.add("§evarious stuff in §6§o§lClockwork");
+
+        if (Clockwork.proxy.shiftPressed() == true)
+        {
+
+        }
 	}
 
 	@Override

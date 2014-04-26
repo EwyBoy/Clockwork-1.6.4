@@ -2,6 +2,7 @@ package Item.Items;
 
 import CreativeTabs.CWCreativeTabs;
 import Item.Technical.ItemInfo;
+import Main.Clockwork;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -37,6 +38,13 @@ public class Clock extends Item
     {
         info.add("§e§oNo time to lose?");
         info.add("§eThis clock will fix that!");
+
+        if (Clockwork.proxy.shiftPressed() == true)
+        {
+            info.add("Who the hell wants doors inside their house?");
+            info.add("This item allows you to swap through the wall");
+            info.add("and maybe back again?");
+        }
     }
     public int getItemEnchantability()
 	    {

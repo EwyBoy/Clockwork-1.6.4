@@ -4,11 +4,16 @@ import java.util.List;
 
 import Item.Technical.ItemInfo;
 import CreativeTabs.CWCreativeTabs;
+import Item.Technical.Items;
+import Main.Clockwork;
+import Network.Proxies.ClientProxy;
+import Network.Proxies.CommonProxy;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.NetworkListenThread;
 import net.minecraft.util.Icon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -43,11 +48,18 @@ public class Dust extends Item
         }
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack itemstack, EntityPlayer player, List info, boolean useExtraInformation)
+    public void addInformation(ItemStack stack, EntityPlayer player, List info, boolean useExtraInformation)
     {
-        info.add("§eUsed for Crafting,");
-        info.add("§evarious stuff in §6§o§lClockwork");
+        info.add("§eA dust added by §6§o§lClockwork");
+
+       if (Clockwork.proxy.shiftPressed() == true)
+            {
+                info.add("Piles of dust can be crafted using ingots");
+                info.add("they can also be smelted back into ingots");
+            }
+
     }
 
     @Override

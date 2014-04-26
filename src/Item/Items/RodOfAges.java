@@ -2,6 +2,7 @@ package Item.Items;
 
 import CreativeTabs.CWCreativeTabs;
 import Item.Technical.ItemInfo;
+import Main.Clockwork;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -56,6 +57,13 @@ public class RodOfAges extends Item
     {
         info.add("§e§oEver wanted to travel back in time?");
         info.add("§eThis rod will fix that!");
+
+        if (Clockwork.proxy.shiftPressed() == true)
+        {
+            info.add("Shift click to set a marker");
+            info.add("Go anywhere you want within a 10 block range");
+            info.add("swap back to the marker with a single click");
+        }
     }
 
     public int getItemEnchantability()

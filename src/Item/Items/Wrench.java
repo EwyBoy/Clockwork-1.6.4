@@ -3,6 +3,7 @@ package Item.Items;
 import java.util.List;
 
 import CreativeTabs.CWCreativeTabs;
+import Main.Clockwork;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -100,6 +101,27 @@ public class Wrench extends Item
 	public void addInformation(ItemStack itemstack, EntityPlayer player, List info, boolean useExtraInformation) 
 	{
 		info.add("§eWrench Mode: " + getWrenchType() + " ("+ getWrenchTypeID() + ")");
+
+        if (Clockwork.proxy.shiftPressed() == true)
+        {
+            if (getWrenchTypeID() == MODE_TimeShifting)
+            {
+                info.add("This mode allows you to");
+                info.add("fiddle with the time");
+            }
+
+            if (getWrenchTypeID() == MODE_CwMachine)
+            {
+                info.add("This mode allows you to");
+                info.add("interact with machines");
+            }
+
+            if (getWrenchTypeID() == MODE_Deactivaed)
+            {
+                info.add("The wrench is now in deactivated");
+                info.add("so you don't accidentally mess up something");
+            }
+        }
 	}
 	
 	public String getWrenchType() {

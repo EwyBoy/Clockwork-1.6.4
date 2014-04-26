@@ -1,5 +1,6 @@
 package Crafting;
 
+import Block.Technical.Blocks;
 import Item.Items.Dust;
 import Item.Technical.Items;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -44,13 +45,31 @@ public class registerRecipies
         GameRegistry.addShapelessRecipe(new ItemStack(Items.Dust, 1, 3), new ItemStack(Items.Dust, 1, 0),new ItemStack(Items.Dust, 1, 0),new ItemStack(Items.Dust, 1, 0), new ItemStack(Items.Dust, 1, 1));
         GameRegistry.addShapelessRecipe(new ItemStack(Items.Dust, 1, 4), new ItemStack(Items.Dust, 1, 0),new ItemStack(Items.Dust, 1, 0),new ItemStack(Items.Dust, 1, 0), new ItemStack(Items.Dust, 1, 2));
 
-        GameRegistry.addRecipe(new ItemStack(Items.Wrench), "  x"," y ", "z  ",
+        GameRegistry.addRecipe(new ItemStack(Items.Wrench), "  x"," y ","z  ",
                 'x', Head, 'y', Core, 'z', Handel);
 
-        GameRegistry.addRecipe(new ItemStack(Items.CraftingComponent, 1, 0), " x ","x x", " x ",
+        GameRegistry.addRecipe(new ItemStack(Items.CraftingComponent, 1, 0), " x ","x x"," x ",
                 'x', BronzeIngot);
-        GameRegistry.addRecipe(new ItemStack(Items.CraftingComponent, 1, 1), " x ","x x", " x ",
+        GameRegistry.addRecipe(new ItemStack(Items.CraftingComponent, 1, 1), " x ","x x"," x ",
                 'x', BrassIngot);
+
+        GameRegistry.addRecipe(new ItemStack(Blocks.Metals, 1, 0), "xxx","xxx","xxx",
+                'x', CopperIngot);
+        GameRegistry.addRecipe(new ItemStack(Blocks.Metals, 1, 1), "xxx","xxx","xxx",
+                'x', TinIngot);
+        GameRegistry.addRecipe(new ItemStack(Blocks.Metals, 1, 2), "xxx","xxx","xxx",
+                'x', ZincIngot);
+        GameRegistry.addRecipe(new ItemStack(Blocks.Metals, 1, 3), "xxx","xxx","xxx",
+                'x', BronzeIngot);
+        GameRegistry.addRecipe(new ItemStack(Blocks.Metals, 1, 4), "xxx","xxx","xxx",
+                'x', BrassIngot);
+
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.Ingot, 9, 0), new ItemStack(Blocks.Metals, 1, 0));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.Ingot, 9, 1), new ItemStack(Blocks.Metals, 1, 1));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.Ingot, 9, 2), new ItemStack(Blocks.Metals, 1, 2));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.Ingot, 9, 3), new ItemStack(Blocks.Metals, 1, 3));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.Ingot, 9, 4), new ItemStack(Blocks.Metals, 1, 4));
+
 	}
 
 }

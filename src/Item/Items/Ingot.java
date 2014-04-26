@@ -4,6 +4,7 @@ import java.util.List;
 
 import Item.Technical.ItemInfo;
 import CreativeTabs.CWCreativeTabs;
+import Main.Clockwork;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -46,8 +47,13 @@ public class Ingot extends Item
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack itemstack, EntityPlayer player, List info, boolean useExtraInformation)
     {
-        info.add("§eUsed for Crafting,");
-        info.add("§evarious stuff in §6§o§lClockwork");
+        info.add("§eA metal added by §6§o§lClockwork");
+
+        if (Clockwork.proxy.shiftPressed() == true)
+        {
+            info.add("Ingots can be used to craft several items");
+            info.add("they can also be turned into dust or blocks");
+        }
     }
 
     @Override

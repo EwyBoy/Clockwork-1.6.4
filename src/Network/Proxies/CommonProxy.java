@@ -1,25 +1,21 @@
 package Network.Proxies;
 
-public class CommonProxy 
+public class CommonProxy
 {
-	public void initSounds()
-	{
-		
+	public void initSounds(){
 	}
 	
-	public void initRenders()
-	{
-		
+	public void initRenders(){
 	}
 	
-	public void registerRenderers()
-	{
-		
+	public void registerRenderers(){
 	}
 
-	public void registerRenderThings() 
-	{
-		
-		
+	public void registerRenderThings(){
 	}
+
+    public boolean shiftPressed()
+    {
+        return false;
+    }
 }

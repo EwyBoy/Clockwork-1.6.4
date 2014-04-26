@@ -124,7 +124,7 @@ public class TransBlock extends Block
 	
 	@SideOnly(Side.CLIENT)
 	@Override
-	public Icon getIcon(int side, int meta) 
+	public Icon getIcon(int side, int meta)
 	{
 		if (side == 1)
 	{
